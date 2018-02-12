@@ -16,5 +16,6 @@ public class BuilderTest {
         Assert.assertTrue(pizza.pieType.equals(Pizza.PieType.THICK));
         Assert.assertTrue(pizza.sauce.equals(Pizza.Sauce.TOMATO));
         Assert.assertTrue(pizza.size.equals(Pizza.Size.MEDIUM));
+        Assert.assertEquals(pizza,  new Pizza(Pizza.Size.MEDIUM, Pizza.Sauce.TOMATO, Pizza.PieType.THICK, true));
     }
 }

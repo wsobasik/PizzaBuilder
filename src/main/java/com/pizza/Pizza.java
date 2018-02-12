@@ -46,6 +46,28 @@ public class Pizza {
     public void setEdgesCheese(boolean edgesCheese) {
         this.edgesCheese = edgesCheese;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pizza pizza = (Pizza) o;
+        if (size != pizza.size) return false;
+        if (sauce != pizza.sauce) return false;
+        if (pieType != pizza.pieType) return false;
+
+        return edgesCheese.equals(pizza.edgesCheese);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = size.hashCode();
+        result = 31 * result + sauce.hashCode();
+        result = 31 * result + pieType.hashCode();
+        result = 31 * result + edgesCheese.hashCode();
+        return result;
+    }
 }
 
 
